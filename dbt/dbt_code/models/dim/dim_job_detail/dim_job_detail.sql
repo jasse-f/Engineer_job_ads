@@ -11,13 +11,13 @@ coalesce(cast(scope_of_work_min as string), 'Not Available') AS scope_of_work_mi
 coalesce(cast(scope_of_work_max as string), 'Not Available') AS scope_of_work_max,
 occupation_field,
 CASE 
-    WHEN engineer_type_id = 1725637462.57518 THEN 'Rymdingenjör'
-    WHEN engineer_type_id = 1725637471.831309 THEN 'Driftingenjör'
-    WHEN engineer_type_id = 1725637484.744361 THEN 'Automationsingenjör'
-    WHEN engineer_type_id = 1725637494.549522 THEN 'Högskoleingenjör'
-    WHEN engineer_type_id = 1725637501.94134 THEN 'Civilingenjör'
-    WHEN engineer_type_id = 1725637518.8779361 THEN 'Maskiningenjör'
-    WHEN engineer_type_id = 1725637528.460333 THEN  'Miljöingenjör'
+    WHEN engineer_type_id = 1727433259.511136 THEN 'Rymdingenjör'
+    WHEN engineer_type_id = 1727433309.497482 THEN 'Driftingenjör'
+    WHEN engineer_type_id = 1727433321.8988202 THEN 'Automationsingenjör'
+    WHEN engineer_type_id = 1727433333.781475 THEN 'Högskoleingenjör'
+    WHEN engineer_type_id = 1727433341.364583 THEN 'Civilingenjör'
+    WHEN engineer_type_id = 1727433360.482989 THEN 'Maskiningenjör'
+    WHEN engineer_type_id = 1727433368.630014 THEN  'Miljöingenjör'
 
     ELSE 'Not Available'
 END AS engineer_type

@@ -194,3 +194,13 @@ SELECT DISTINCT workplace_region, COUNT(workplace_region) AS AMOUNTOFADS
 FROM dim_employer
 GROUP BY workplace_region
 ORDER BY AMOUNTOFADS DESC;
+
+
+USE ROLE T_E_DLT_ROLE;
+
+SHOW DATABASES;
+
+
+SHOW SCHEMAS IN ENGINEER_ADS;
+
+SHOW TABLES IN Engineer_ads.Staging;

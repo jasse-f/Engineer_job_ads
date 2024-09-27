@@ -13,7 +13,6 @@ def _get_ads(url_for_search, params):
 
 @dlt.resource(write_disposition="append")
 def jobsearch_resource(params):
-
     url = "https://jobsearch.api.jobtechdev.se"
     url_for_search = f"{url}/search"
 
@@ -24,12 +23,18 @@ def jobsearch_resource(params):
 
         ads = _get_ads(url_for_search, params)["hits"]
 
-        #stop if there are no more ads
+        print(f"Fetched {len(ads)} ads from API.") 
+
         if not ads:
+            print("No more ads to fetch. Exiting...")
             break
 
         for ad in ads:
-            yield ad
+            try:
+                yield ad
+                print(f"ad added")
+            except Exception as e:
+                print(f"Error yielding ad: {e}")  # Print any yielding errors
 
         #Break loop if less than 100 ads are returned (last page)
         if len(ads) < 100:
@@ -41,9 +46,9 @@ def jobsearch_resource(params):
 
 def run_pipeline(query, table_name):
     pipeline = dlt.pipeline(
-        pipeline_name="jobsearch_engineer",
-        destination="snowflake",
-        dataset_name="Staging",
+    pipeline_name="jobsearch_engineer",
+    destination="snowflake",
+    dataset_name="Staging",
     )
 
     params = {"q": query, "limit": 100, "offset": 0}
