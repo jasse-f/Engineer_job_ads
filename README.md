@@ -1,3 +1,6 @@
+## Om projektet
+An app that extracts data from Arbetsförmedlingen's regarding 7 different engineer titles. The data is then transformed and displayed in a visual dashboard.
+
 ## Komma igång
 
 För att köra igång projektet, följ dessa steg.
