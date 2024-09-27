@@ -115,12 +115,12 @@ def layout():
                 f"""
                 SELECT
                     SUM(vacancies) as vacancies,
-                    workplace_municipality
+                    workplace_municipality As Municipality
                 FROM
                     mart_job_listings
                 {where_clause}
                 GROUP BY
-                    workplace_municipality
+                    Municipality
                 ORDER BY vacancies DESC;
                 """
             ), hide_index=True
@@ -134,12 +134,12 @@ def layout():
                 f"""
                 SELECT
                     SUM(vacancies) as vacancies,
-                    workplace_region
+                    workplace_region AS region
                 FROM
                     mart_job_listings
                 {where_clause}
                 GROUP BY
-                    workplace_region
+                    region
                 ORDER BY vacancies DESC;
                 """
             ), hide_index=True
